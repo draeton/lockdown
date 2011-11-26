@@ -56,6 +56,8 @@
             this.settings = $.extend({}, c, options);
         },
         
+        // loop through each element to replace the code
+        // blocks with canvas elements
         "lock": function ($elements) {
             var self = this;
             
