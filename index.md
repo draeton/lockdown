@@ -3,7 +3,7 @@ layout: default
 title: Lockdown - hide your code!
 ---
 
-<link rel="stylesheet" href="css/lockdown-0.0.1-min.css">
+<link rel="stylesheet" href="css/lockdown-0.0.3-min.css">
 
 <section id="main" role="main">
 
