@@ -4,7 +4,7 @@
 
 ### Version
 
-    @VERSION@
+    0.0.0
 
 ### Dependencies
 
@@ -14,9 +14,9 @@ jQuery 1.7+, *Flashcanvas for older browser support*
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="css/lockdown-@VERSION@-min.css">
+    <link rel="stylesheet" href="css/lockdown-0.0.0-min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="js/lockdown-@VERSION@-min.js"></script>
+    <script src="js/lockdown-0.0.0-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
