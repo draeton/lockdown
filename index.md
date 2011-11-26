@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Lockdown - Obfuscates code snippets by writing them to the canvas
+title: Lockdown - hide your code!
 ---
 
 <link rel="stylesheet" href="css/lockdown-0.0.1-min.css">
@@ -11,15 +11,19 @@ title: Lockdown - Obfuscates code snippets by writing them to the canvas
 by writing them to the canvas. This demo is compatible with IE7+, Firefox, Chrome,
 and Safari.
 
+The use case for the particular project is a testing environment where the
+proctor wants to prevent test-takers from easily copying code and determining using
+the console or a CLI.
+
 <a href="http://www.w3.org/html/logo/"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-graphics.png" height="50" alt="HTML5 Powered with CSS3 / Styling, and Graphics" title="HTML5 Powered with CSS3 / Styling, and Graphics"></a>
 
 <!-- code examples -->
-<h2>Code 1</h2>
+<h3>Sample 1</h3>
 <pre class="code base64">
 function%20foo%20()%20%7B%0A%20%20alert('Hello%20world!')%0A%7D
 </pre>
 
-<h2>Code 2</h2>
+<h3>Sample 2</h3>
 <pre class="code base64">
 var%20t%20%3D%20%24(%22%3Ctextarea%3E%22).prependTo(%22body%22)%3B%0Avar%20b%20%3D%20%24(%22%3Cbutton%3Eclick%20to%20encode%3C%2Fbutton%3E%22).click(function%20()%20%7B%0A%20%20var%20val%20%3D%20t.val()%3B%0A%20%20if%20(val)%20%7B%0A%20%20%20%20t.val(encodeURIComponent(val))%3B%0A%20%20%7D%0A%7D).insertBefore(t)%3B%0A%24(%22%3Cbr%3E%22).insertBefore(t)%3B
 </pre>
