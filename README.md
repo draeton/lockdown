@@ -4,7 +4,7 @@
 
 ### Version
 
-    0.0.2
+    0.0.3
 
 ### Dependencies
 
@@ -14,15 +14,15 @@ jQuery 1.7+, *Flashcanvas for older browser support*
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="css/lockdown-0.0.2-min.css">
+    <link rel="stylesheet" href="css/lockdown-0.0.3-min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="js/lockdown-0.0.2-min.js"></script>
+    <script src="js/lockdown-0.0.3-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
     jQuery(document).ready(function ($) {
 
-        Lockdown.configure( {} );
+        Lockdown.configure( {check: new RegExp("-- do not copy --")} );
         Lockdown.lock( $("pre.code") );
 
     });

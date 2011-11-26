@@ -22,7 +22,7 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
 
     jQuery(document).ready(function ($) {
 
-        Lockdown.configure( {} );
+        Lockdown.configure( {check: new RegExp("-- do not copy --")} );
         Lockdown.lock( $("pre.code") );
 
     });
