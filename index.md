@@ -80,7 +80,8 @@ You can also clone the project with [Git](http://git-scm.com) by running:
 <script>
 jQuery(document).ready(function ($) {
 
-    Lockdown.configure( {} );
+    var options = {width: 572};
+    Lockdown.configure( options );
     Lockdown.lock( $("pre.code") );
 
 });
