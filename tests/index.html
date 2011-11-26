@@ -24,15 +24,27 @@
     <div id="qunit-fixture">test markup</div>
 
 <!-- code examples -->
-    <h2>Code 1</h2>
-    <pre class="code base64">
-function%20foo%20()%20%7B%0A%20%20alert('Hello%20world!')%0A%7D
-    </pre>
+<h3>Sample 1</h3>
+<pre class="code">
+function bar (baz) {
+-- do not copy --
+    return function () {
+        alert("Do not copy " + baz + "!");
+    };
+-- do not copy --
+}
+-- do not copy --
+</pre>
 
-    <h2>Code 2</h2>
-    <pre class="code base64">
+<h3>Sample 2</h3>
+<pre class="code base64">
+function%20foo%20()%20%7B%0A%20%20alert('Hello%20world!')%0A%7D
+</pre>
+
+<h3>Sample 3</h3>
+<pre class="code base64">
 var%20t%20%3D%20%24(%22%3Ctextarea%3E%22).prependTo(%22body%22)%3B%0Avar%20b%20%3D%20%24(%22%3Cbutton%3Eclick%20to%20encode%3C%2Fbutton%3E%22).click(function%20()%20%7B%0A%20%20var%20val%20%3D%20t.val()%3B%0A%20%20if%20(val)%20%7B%0A%20%20%20%20t.val(encodeURIComponent(val))%3B%0A%20%20%7D%0A%7D).insertBefore(t)%3B%0A%24(%22%3Cbr%3E%22).insertBefore(t)%3B
-    </pre>
+</pre>
 <!-- end code examples -->
 </body>
 </html>
