@@ -1,4 +1,4 @@
-// ## Lockdown.js
+// ## Lockdown
 // 
 // Obfuscates code snippets by writing them to the canvas
 // [http://draeton.github.com/lockdown](http://draeton.github.com/lockdown)

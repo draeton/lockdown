@@ -2,15 +2,15 @@
 
 [Lockdown](http://github.matthewcobbs.com/lockdown/) obfuscates code snippets by writing them to the canvas.
 
-### Version
+## Version
 
     0.0.6
 
-### Dependencies
+## Dependencies
 
 jQuery 1.7+, *Flashcanvas for older browser support*
 
-### Implementation
+## Implementation
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
@@ -27,18 +27,18 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
 
     });
 
-### Documentation
+## Documentation
 
 [See here](http://github.matthewcobbs.com/lockdown/docs/lockdown.html).
 
-### TODO
+## TODO
 
 * scrolling for long text
 * syntax highlighting?
 * add options to documentation
 * write unit tests
 
-### License
+## License
 
 (The MIT License)
 
