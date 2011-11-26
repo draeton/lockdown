@@ -44,7 +44,7 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
 {% highlight js %}
 jQuery(document).ready(function ($) {
 
-    Lockdown.configure( {} );
+    Lockdown.configure( {width: 572} );
     Lockdown.lock( $("pre.code") );
 
 });
