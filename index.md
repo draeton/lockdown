@@ -3,7 +3,7 @@ layout: default
 title: Lockdown - hide your code!
 ---
 
-<link rel="stylesheet" href="css/lockdown-0.0.3-min.css">
+<link rel="stylesheet" href="css/lockdown-0.0.6-min.css">
 
 <section id="main" role="main">
 
@@ -50,9 +50,10 @@ var%20t%20%3D%20%24(%22%3Ctextarea%3E%22).prependTo(%22body%22)%3B%0Avar%20b%20%
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
 {% highlight html %}
-<link rel="stylesheet" href="css/lockdown-0.0.3-min.css">
+<link rel="stylesheet" href="css/lockdown-0.0.6-min.css">
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script src="js/lockdown-0.0.3-min.js"></script>
+<script src="js/lockdown-0.0.6-min.js"></script>
 {% endhighlight %}
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
@@ -62,13 +63,17 @@ $(document).ready(function () {
 
     var options = {
         width: 572,
-        check: new RegExp("-- do not copy --")
+        filterexp: new RegExp("-- do not copy --")
     };
     Lockdown.configure( options );
     Lockdown.lock( $("pre.code") );
 
 });
 {% endhighlight %}
+
+## Documentation
+
+[See here.](docs/lockdown.html)
     
 ## Dependencies
 
@@ -84,7 +89,7 @@ Matthew Cobbs (matthew.cobbs@gmail.com)
 
 ## Download
 
-The latest release, **0.0.3, is [available here](dist/lockdown-0.0.3.zip).**
+The latest release, **0.0.6, is [available here](dist/lockdown-0.0.6.zip).**
 
 You can download this project in either [zip](https://github.com/draeton/lockdown/zipball/master) 
 or [tar](https://github.com/draeton/lockdown/tarball/master) formats.
@@ -95,13 +100,13 @@ You can also clone the project with [Git](http://git-scm.com) by running:
 
 </section>
 
-<script src="js/lockdown-0.0.3-min.js"></script>
+<script src="js/lockdown-0.0.6-min.js"></script>
 <script>
 $(document).ready(function () {
 
     var options = {
         width: 572,
-        check: new RegExp("-- do not copy --")
+        filterexp: new RegExp("-- do not copy --")
     };
     Lockdown.configure( options );
     Lockdown.lock( $("pre.code") );
