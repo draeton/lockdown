@@ -1,6 +1,6 @@
 ## Lockdown
 
-[Lockdown](http://github.matthewcobbs.com/lockdown/) obfuscates code snippets by writing them to the canvas.
+[Lockdown](http://draeton.github.com/lockdown/) obfuscates code snippets by writing them to the canvas.
 
 ## Version
 
@@ -29,7 +29,7 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
 
 ## Documentation
 
-[See here](http://github.matthewcobbs.com/lockdown/docs/lockdown.html).
+[See here](http://draeton.github.com/lockdown/docs/lockdown.html).
 
 ## TODO
 
