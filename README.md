@@ -1,10 +1,10 @@
 ## Lockdown
 
-[Lockdown](http://github.matthewcobbs.com/stitches/) obfuscates code snippets by writing them to the canvas.
+[Lockdown](http://github.matthewcobbs.com/lockdown/) obfuscates code snippets by writing them to the canvas.
 
 ### Version
 
-    0.0.0
+    0.0.1
 
 ### Dependencies
 
@@ -14,9 +14,9 @@ jQuery 1.7+, *Flashcanvas for older browser support*
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="css/lockdown-0.0.0-min.css">
+    <link rel="stylesheet" href="css/lockdown-0.0.1-min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="js/lockdown-0.0.0-min.js"></script>
+    <script src="js/lockdown-0.0.1-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
