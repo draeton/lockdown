@@ -9,9 +9,9 @@
 /*global jQuery, FlashCanvas*/
 (function (window, $) {
 
-    "use strict"
+    "use strict";
 
-    var document = window.document
+    var document = window.document;
 
     // **Some configuration defaults**
     var defaults = {
@@ -36,7 +36,7 @@
         width      : 600,
         
         /* lines to remove from code before drawing */
-        filterexp  : null,
+        filterexp  : null
     }
 
     // ## Lockdown constructor
