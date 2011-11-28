@@ -48,9 +48,6 @@
         <propertyfile file="build.properties">
             <entry key="build.number" type="int" operation="+" default="0"/>
         </propertyfile>
-        
-        <!-- <property file="build.properties"/>
-        <echo message="Build number is ${build.number}"/> -->
     </target>
     
     
@@ -117,6 +114,44 @@
         <echo message="Create a zip file for distribution" />
         
         <zip destfile="${dist}/lockdown-${version}.zip" basedir="${build}" />
+    </target>
+    
+    
+    <target name="git" depends="-load.properties" description="Push new build to github">
+        <echo message="Push new build to github"/>
+        
+        <macrodef name="git">
+            <attribute name="command"/>
+            <attribute name="failonerror" default="true"/>
+            <attribute name="dir" default=""/>
+            <element name="args" optional="true"/>
+            <sequential>
+                <echo message="git @{command}"/>
+                <exec executable="git" dir="@{dir}">
+                    <arg value="@{command}"/>
+                    <args/>
+                </exec>
+            </sequential>
+        </macrodef>
+        
+        <git command="add">
+            <args>
+                <arg value="."/>
+            </args>
+        </git>
+        
+        <git command="commit">
+            <args>
+                <arg value="-am Build ${version} completed"/>
+            </args>
+        </git>
+        
+        <git command="push">
+            <args>
+                <arg value="origin"/>
+                <arg value="master"/>
+            </args>
+        </git>
     </target>
     
     
