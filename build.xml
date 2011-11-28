@@ -148,8 +148,7 @@
         
         <git command="push">
             <args>
-                <arg value="origin"/>
-                <arg value="master"/>
+                <arg value="origin master"/>
             </args>
         </git>
     </target>
