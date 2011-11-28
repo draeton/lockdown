@@ -117,8 +117,8 @@
     </target>
     
     
-    <target name="git" depends="-load.properties" description="Push new build to github">
-        <echo message="Push new build to github"/>
+    <target name="-commit" depends="-init" description="Commit new build to git repo">
+        <echo message="Commit new build to git repo"/>
         
         <macrodef name="git">
             <attribute name="command"/>
@@ -145,12 +145,6 @@
                 <arg value="-am Build ${version} completed"/>
             </args>
         </git>
-        
-        <git command="push">
-            <args>
-                <arg value="origin master"/>
-            </args>
-        </git>
     </target>
     
     
@@ -167,6 +161,7 @@
             -concat,
             -minify,
             -copylib,
-            -zip">
+            -zip,
+            -commit">
     </target>
 </project>
