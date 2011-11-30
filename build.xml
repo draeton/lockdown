@@ -7,7 +7,7 @@
     <property environment="env"/>
     <property name="repo" value="lockdown"/>
     
-    <import file="../common-targets.xml"/>
+    <import file="../tools/common-targets.xml"/>
     
     
     <target name="-init" depends="-load.properties" description="Starting new build">
