@@ -87,7 +87,7 @@ Matthew Cobbs (matthew.cobbs@gmail.com)
 
 ## License
 
-[MIT](https://raw.github.com/draeton/stitches/master/LICENSE)
+[MIT](https://raw.github.com/draeton/lockdown/master/LICENSE)
 
 
 ## Download
