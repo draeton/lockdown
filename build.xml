@@ -3,148 +3,32 @@
 
     <description>ANT build file for git://github.com/draeton/lockdown</description>
     
-    <target name="-load.properties" description="Set properties for this build">
-        <echo message="Set properties for this build"/>
         
-        <property environment="env"/>
-        <property file="build.properties"/>
+    <property environment="env"/>
+    <property name="repo" value="lockdown"/>
+    
+    <import file="../common-targets.xml"/>
+    
+    
+    <target name="-init" depends="-load.properties" description="Starting new build">
+        <echo>Starting new build</echo>
         
-        <property name="version" value="${build.major}.${build.minor}.${build.number}"/>
+        <filelist id="src.js" dir="${src.dir}">
+            <file name="${repo}.js"/>
+        </filelist>
+        
+        <filelist id="src.css" dir="${src.dir}">
+            <file name="${repo}.css"/>
+        </filelist>
     </target>
     
     
-    <target name="-init" description="Make project directory structure">
-        <echo message="Starting build ${version}..."/>
-        <echo message="Make project directory structure"/>
+    <target name="-copy-depends" depends="-init" description="Copying dependencies">
+        <echo>Copying dependencies</echo>
         
-        <delete dir="${build}"/>
-        <delete dir="${dist}"/>
-        <delete dir="${docs}"/>
-        
-        <mkdir dir="${build}"/>
-        <mkdir dir="${dist}"/>
-        <mkdir dir="${docs}"/>
-    </target>
-
-    
-    <target name="jshint" depends="-load.properties" description="JSHint check">
-        <echo message="JSHint check"/>
-        
-	    <pathconvert pathsep=" " property="jsfiles">
-	        <fileset dir="${src}">
-	            <include name="**/*.js"/>
-	        </fileset>
-	    </pathconvert>
-	    <exec dir="${src}" executable="java" failonerror="true">
-	        <arg line="-jar ${rhino} ${jshint} ${jsfiles}"/>
-	    </exec>
-	    <echo>Finished</echo>
-    </target>
-
-    
-    <target name="-increment" depends="-load.properties" description="Increment build number">
-        <echo message="Increment build number"/>
-        
-        <propertyfile file="build.properties">
-            <entry key="build.number" type="int" operation="+" default="0"/>
-        </propertyfile>
-    </target>
-    
-    
-    <target name="-readme" depends="-increment" description="Updating version number in README">        
-        <echo message="Updating version number in README"/>
-        
-        <delete file="README.md"/>
-        <copy file="README" tofile="README.md"/>
-        <replace file="README.md" token="@VERSION@" value="${version}"/>
-    </target>
-    
-    
-    <target name="-docco" depends="-init" description="Create docs using Docco">
-        <echo message="Create docs using Docco"/>
-        
-        <exec executable="${docco}">
-            <arg value="${src}/lockdown.js"/>
-        </exec>
-        <!-- clean up after docco -->
-        <delete dir="-p"/>
-    </target>
-    
-    
-    <target name="-concat" depends="-init" description="Concatenation of JS and CSS">
-        <echo message="Concatenation of JS and CSS"/>
-
-        <concat destfile="${build}/js/lockdown-${version}.js" force="no">
-            <fileset dir="${src}" includes="lockdown.js"/>
-        </concat>
-        <concat destfile="${build}/css/lockdown-${version}.css" force="no">
-            <fileset dir="${src}" includes="lockdown.css"/>
-        </concat>
-    </target>
-    
-    
-    <target name="-minify" depends="-concat" description="Invoke YUI compressor">
-        <echo message="Invoke YUI compressor"/>
-        
-        <path id="task.classpath">
-            <pathelement location="${yui-compressor.jar}"/>
-            <pathelement location="${yui-compressor-ant-task.jar}"/>
-        </path>
-        <taskdef name="yui-compressor" classname="net.noha.tools.ant.yuicompressor.tasks.YuiCompressorTask">
-            <classpath refid="task.classpath"/>
-        </taskdef>
-        
-        <yui-compressor warn="false" charset="UTF-8" fromdir="${build}" todir="${build}">
-            <include name="js/lockdown-${version}.js"/>
-            <include name="css/lockdown-${version}.css"/>
-        </yui-compressor>
-    </target>
-    
-    
-    <target name="-copylib" depends="-init" description="Copying dependencies">
-        <echo message="Copying dependencies"/>
-        
-        <copy todir="${build}/js">
-            <fileset dir="${src}/lib"/>
+        <copy todir="${build.dir}/js">
+            <fileset dir="${src.dir}/lib"/>
         </copy>
-    </target>
-    
-    
-    <target name="-zip" depends="-init" description="Create a zip file for distribution">       
-        <echo message="Create a zip file for distribution" />
-        
-        <zip destfile="${dist}/lockdown-${version}.zip" basedir="${build}" />
-    </target>
-    
-    
-    <target name="-commit" depends="-init" description="Commit new build to git repo">
-        <echo message="Commit new build to git repo"/>
-        
-        <macrodef name="git">
-            <attribute name="command"/>
-            <attribute name="failonerror" default="true"/>
-            <attribute name="dir" default=""/>
-            <element name="args" optional="true"/>
-            <sequential>
-                <echo message="git @{command}"/>
-                <exec executable="git" dir="@{dir}">
-                    <arg value="@{command}"/>
-                    <args/>
-                </exec>
-            </sequential>
-        </macrodef>
-        
-        <git command="add">
-            <args>
-                <arg value="."/>
-            </args>
-        </git>
-        
-        <git command="commit">
-            <args>
-                <arg value="-am Build ${version} completed"/>
-            </args>
-        </git>
     </target>
     
     
@@ -153,15 +37,17 @@
         description="Builds project files for production use"
         depends="
             -load.properties,
+            -clean,
             -init,
-            jshint,
-            -increment,
             -readme,
             -docco,
             -concat,
             -minify,
-            -copylib,
+            -copy-depends,
             -zip,
-            -commit">
+            -commit,
+            -gh-pages-commit,
+            -increment">
     </target>
+    
 </project>
