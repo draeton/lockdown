@@ -1,3 +1,0 @@
-[submodule "lockdown"]
-	path = lockdown
-	url = git@github.com:draeton/lockdown.git
