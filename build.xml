@@ -7,7 +7,7 @@
     <property environment="env"/>
     <property name="repo" value="lockdown"/>
     
-    <import file="../tools/common-targets.xml"/>
+    <import file="../_tools/github/common-targets.xml"/>
     
     
     <target name="-init" depends="-load.properties" description="Starting new build">
@@ -46,8 +46,7 @@
             -copy-depends,
             -zip,
             -commit,
-            -gh-pages-commit,
-            -increment">
+            -gh-pages-commit">
     </target>
     
 </project>
