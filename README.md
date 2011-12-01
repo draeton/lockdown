@@ -1,16 +1,16 @@
 ## Lockdown
 
 [Lockdown](http://draeton.github.com/lockdown/) obfuscates code snippets by writing them to the canvas.
-The current version is `0.0.18`. Documentation is available
+The current version is `0.0.19`. Documentation is available
 [here](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html).
 
 ## Implementation
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="css/lockdown-0.0.18-min.css">
+    <link rel="stylesheet" href="css/lockdown-0.0.19-min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="js/lockdown-0.0.18-min.js"></script>
+    <script src="js/lockdown-0.0.19-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
