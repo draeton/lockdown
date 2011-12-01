@@ -87,7 +87,7 @@ Matthew Cobbs (matthew.cobbs@gmail.com)
 
 ## License
 
-[MIT](http://draeton.github.com/lockdown/lockdown/LICENSE)
+[MIT](https://raw.github.com/draeton/lockdown/master/LICENSE)
 
 
 ## Download
