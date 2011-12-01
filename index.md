@@ -3,7 +3,7 @@ layout: default
 title: Lockdown - hide your code!
 ---
 
-<link rel="stylesheet" href="css/lockdown-0.0.15-min.css">
+<link rel="stylesheet" href="http://draeton.github.com/lockdown/lockdown/build/css/lockdown-0.0.15-min.css">
 
 <section id="main" role="main">
 
@@ -54,7 +54,7 @@ Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 <link rel="stylesheet" href="css/lockdown-0.0.15-min.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script src="js/lockdown-0.0.15-min.js"></script>
+<script src="http://draeton.github.com/lockdown/lockdown/build/js/lockdown-0.0.15-min.js"></script>
 {% endhighlight %}
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
@@ -72,7 +72,7 @@ $(document).ready(function () {
 });
 {% endhighlight %}
 
-Documentation is available [here.](docs/lockdown.html)
+Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html)
     
 
 ## Dependencies
@@ -87,12 +87,12 @@ Matthew Cobbs (matthew.cobbs@gmail.com)
 
 ## License
 
-[MIT](https://raw.github.com/draeton/lockdown/master/LICENSE)
+[MIT](http://draeton.github.com/lockdown/lockdown/LICENSE)
 
 
 ## Download
 
-The latest release, **0.0.15, is [available here](dist/lockdown-0.0.15.zip).**
+The latest release, **0.0.15, is [available here](http://draeton.github.com/lockdown/lockdown/dist/lockdown-0.0.15.zip).**
 
 You can download this project in either [zip](https://github.com/draeton/lockdown/zipball/master) 
 or [tar](https://github.com/draeton/lockdown/tarball/master) formats.
@@ -103,7 +103,7 @@ You can also clone the project with [Git](http://git-scm.com) by running:
 
 </section>
 
-<script src="js/lockdown-0.0.15-min.js"></script>
+<script src="http://draeton.github.com/lockdown/lockdown/build/js/lockdown-0.0.15-min.js"></script>
 <script>
 $(document).ready(function () {
 
