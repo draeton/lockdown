@@ -36,6 +36,7 @@
     <target name="prod"
         description="Builds project files for production use"
         depends="
+            increment,
             -load.properties,
             -clean,
             -init,
@@ -45,8 +46,7 @@
             -minify,
             -copy-depends,
             -zip,
-            -commit,
-            increment">
+            -commit">
     </target>
                 
     <target name="pages"
