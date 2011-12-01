@@ -45,7 +45,14 @@
             -minify,
             -copy-depends,
             -zip,
-            -commit,
+            -commit">
+    </target>
+                
+    <target name="pages"
+        description="Builds project pages (and prod)"
+        depends="
+            prod,
+            -gh-pages-update,
             -gh-pages-commit">
     </target>
     
