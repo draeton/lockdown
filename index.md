@@ -54,7 +54,7 @@ Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 <link rel="stylesheet" href="css/lockdown-0.0.15-min.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script src="http://draeton.github.com/lockdown/lockdown/build/js/lockdown-0.0.15-min.js"></script>
+<script src="js/lockdown-0.0.15-min.js"></script>
 {% endhighlight %}
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
