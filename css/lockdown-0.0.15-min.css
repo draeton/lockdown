@@ -1,8 +1,0 @@
-/*!
- * Lockdown.js
- * Obfuscates code snippets by writing them to the canvas
- * http://draeton.github.com/lockdown
- *
- * Copyright 2011, Matthew Cobbs
- * Licensed under the MIT license.
- */canvas.lockdown{outline:1px dotted black;display:block;clear:both}canvas.lockdown:hover{outline:1px dotted #aaa}
