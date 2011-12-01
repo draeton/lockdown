@@ -45,7 +45,8 @@
             -minify,
             -copy-depends,
             -zip,
-            -commit">
+            -commit,
+            increment">
     </target>
                 
     <target name="pages"
