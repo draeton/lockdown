@@ -8,9 +8,9 @@ The current version is `@VERSION@`. Documentation is available
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="lockdown/build/css/lockdown-@VERSION@-min.css">
+    <link rel="stylesheet" href="css/lockdown-@VERSION@-min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="lockdown/build/js/lockdown-@VERSION@-min.js"></script>
+    <script src="js/lockdown-@VERSION@-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
@@ -24,13 +24,6 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
 ## Dependencies
 
 jQuery 1.7+, *Flashcanvas for older browser support*
-
-## To-do
-
-* scrolling for long text
-* syntax highlighting?
-* add options to documentation
-* write unit tests
 
 ## License
 
