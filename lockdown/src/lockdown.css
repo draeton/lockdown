@@ -10,6 +10,7 @@ canvas.lockdown {
     outline: 1px dotted black;
     display: block;
     clear: both;
+    margin-bottom: 18px;
 }
 canvas.lockdown:hover {
     outline: 1px dotted #aaa;
