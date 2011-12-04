@@ -24,6 +24,10 @@
 
   <!-- Loading everything with Modernizr -->
   <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.2.min.js"><\/script>')</script>
   
   <!-- Le fav and touch icons -->
   <link rel="shortcut icon" href="favicon.ico">
@@ -59,6 +63,9 @@
     <!-- main content container -->
     <div class="container span10">
         <div class="content">
+            <div class="page-header">
+                <h1>Lockdown <small>hide your code!</small></h1>
+            </div>
                     
             {{ content }}
             
@@ -86,18 +93,6 @@
             </div>
         </div>
     </footer>
-    
-    <!-- facebook api start -->
-    <div id="fb-root"></div>
-    <script>
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=289961234369425";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-    </script>
 
     <!-- github banner -->
     <!-- a href="https://github.com/draeton/">
@@ -113,7 +108,6 @@
     ];
     Modernizr.load({
         load: [
-            '//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js',
             '/bootstrap/js/bootstrap-dropdown.js',
             '/bootstrap/js/bootstrap-buttons.js',
             '/bootstrap/js/bootstrap-alerts.js',
@@ -122,6 +116,18 @@
             ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
         ]
     });
+    </script>
+    
+    <!-- facebook api start -->
+    <div id="fb-root"></div>
+    <script>
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=289961234369425";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
     </script>
 
     <!--[if lt IE 7 ]>

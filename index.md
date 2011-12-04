@@ -63,7 +63,7 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
 $(document).ready(function () {
 
     var options = {
-        width: 572,
+        width: 580,
         filterexp: new RegExp("-- do not copy --")
     };
     Lockdown.configure( options );
@@ -103,16 +103,20 @@ You can also clone the project with [Git](http://git-scm.com) by running:
 
 </section>
 
-<script src="http://draeton.github.com/lockdown/lockdown/build/js/lockdown-0.0.19-min.js"></script>
 <script>
-$(document).ready(function () {
+Modernizr.load({
+    load: 'http://draeton.github.com/lockdown/lockdown/build/js/lockdown-0.0.19-min.js',
+    complete: function () {
+        $(function () {
 
-    var options = {
-        width: 572,
-        filterexp: new RegExp("-- do not copy --")
-    };
-    Lockdown.configure( options );
-    Lockdown.lock( $("pre.code") );
+            var options = {
+                width: 580,
+                filterexp: new RegExp("-- do not copy --")
+            };
+            Lockdown.configure( options );
+            Lockdown.lock( $("pre.code") );
 
+        });
+    }
 });
 </script>
