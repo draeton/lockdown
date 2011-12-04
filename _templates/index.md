@@ -83,9 +83,12 @@ Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/d
 [jQuery 1.7+](http://jquery.com/), *[Flashcanvas](http://flashcanvas.net/) for older browser support*
 
 
-## Contributors
+## Contributing
 
-Matthew Cobbs (matthew.cobbs@gmail.com)
+* [Fork the project.](https://github.com/draeton/lockdown)
+* Read through the [outstanding issues or report new ones.](https://github.com/draeton/lockdown/issues)
+* Write some tests to make sure we don't accidentally break each other's code.
+* Send a pull request.
 
 
 ## License

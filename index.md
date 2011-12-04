@@ -3,7 +3,7 @@ layout: default
 title: Lockdown - hide your code!
 ---
 
-<link rel="stylesheet" href="http://draeton.github.com/lockdown/lockdown/build/css/lockdown-0.0.21-min.css">
+<link rel="stylesheet" href="http://draeton.github.com/lockdown/lockdown/build/css/lockdown-0.0.22-min.css">
 
 <section id="main" role="main">
 
@@ -54,10 +54,10 @@ var%20t%20%3D%20%24(%22%3Ctextarea%3E%22).prependTo(%22body%22)%3B%0Avar%20b%20%
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
 {% highlight html %}
-<link rel="stylesheet" href="css/lockdown-0.0.21-min.css">
+<link rel="stylesheet" href="css/lockdown-0.0.22-min.css">
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script src="js/lockdown-0.0.21-min.js"></script>
+<script src="js/lockdown-0.0.22-min.js"></script>
 {% endhighlight %}
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
@@ -83,9 +83,12 @@ Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/d
 [jQuery 1.7+](http://jquery.com/), *[Flashcanvas](http://flashcanvas.net/) for older browser support*
 
 
-## Contributors
+## Contributing
 
-Matthew Cobbs (matthew.cobbs@gmail.com)
+* [Fork the project.](https://github.com/draeton/lockdown)
+* Read through the [outstanding issues or report new ones.](https://github.com/draeton/lockdown/issues)
+* Write some tests to make sure we don't accidentally break each other's code.
+* Send a pull request.
 
 
 ## License
@@ -95,7 +98,7 @@ Matthew Cobbs (matthew.cobbs@gmail.com)
 
 ## Download
 
-The latest release, **0.0.21, is [available here](http://draeton.github.com/lockdown/lockdown/dist/lockdown-0.0.21.zip).**
+The latest release, **0.0.22, is [available here](http://draeton.github.com/lockdown/lockdown/dist/lockdown-0.0.22.zip).**
 
 You can download this project in either [zip](https://github.com/draeton/lockdown/zipball/master) 
 or [tar](https://github.com/draeton/lockdown/tarball/master) formats.
@@ -108,7 +111,7 @@ You can also clone the project with [Git](http://git-scm.com) by running:
 
 <script>
 Modernizr.load({
-    load: "/lockdown/lockdown/build/js/lockdown-0.0.21-min.js",
+    load: "/lockdown/lockdown/build/js/lockdown-0.0.22-min.js",
     complete: function () {
         $(function () {
 
