@@ -7,7 +7,7 @@ title: Lockdown - hide your code!
 
 <section id="main" role="main">
 
-[Lockdown](http://draeton.github.com/lockdown/) obfuscates code snippets 
+[Lockdown](http://github.com/draeton/lockdown) obfuscates code snippets 
 by writing them to the canvas. This demo is compatible with IE7+, Firefox, Chrome,
 and Safari.
 
