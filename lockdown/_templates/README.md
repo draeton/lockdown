@@ -9,21 +9,37 @@ The current version is `@VERSION@`. Documentation is available
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
     <link rel="stylesheet" href="css/lockdown-@VERSION@-min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/modernizr-2.0.6.min.js"></script>
     <script src="js/lockdown-@VERSION@-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
-    jQuery(document).ready(function ($) {
-
-        Lockdown.configure( {filterexp: new RegExp("-- do not copy --")} );
-        Lockdown.lock( $("pre.code") );
-
-    });
+    Modernizr.load([
+        "js/lockdown-@VERSION@-min.js",
+        {
+            test: Modernizr.canvas,
+            nope: "js/flashcanvas/flashcanvas.js",
+            complete: function () {
+                $(function () {
+        
+                    var $elements = $("pre.code");
+                    var options = {
+                        jsdir: "lockdown/build/js",
+                        width: 580,
+                        filterexp: new RegExp("-- do not copy --")
+                    };
+                    Lockdown.init( options );
+                    Lockdown.lock( $elements );
+        
+                });
+            }
+        }
+    ]);
 
 ## Dependencies
 
-jQuery 1.7+, *Flashcanvas for older browser support*
+jQuery 1.7+, Modernizr; *Flashcanvas for older browser support*
 
 ## License
 

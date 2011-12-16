@@ -56,23 +56,35 @@ Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 {% highlight html %}
 <link rel="stylesheet" href="css/lockdown-@VERSION@-min.css">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/modernizr-2.0.6.min.js"></script>
 <script src="js/lockdown-@VERSION@-min.js"></script>
 {% endhighlight %}
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
 {% highlight js %}
-$(document).ready(function () {
-
-    var options = {
-        width: 580,
-        filterexp: new RegExp("-- do not copy --")
-    };
-    Lockdown.configure( options );
-    Lockdown.lock( $("pre.code") );
-
-});
+Modernizr.load([
+    "js/lockdown-@VERSION@-min.js",
+    {
+        test: Modernizr.canvas,
+        nope: "js/flashcanvas/flashcanvas.js",
+        complete: function () {
+            $(function () {
+    
+                var $elements = $("pre.code");
+                var options = {
+                    jsdir: "lockdown/build/js",
+                    width: 580,
+                    filterexp: new RegExp("-- do not copy --")
+                };
+                Lockdown.init( options );
+                Lockdown.lock( $elements );
+    
+            });
+        }
+    }
+]);
 {% endhighlight %}
 
 Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html)
@@ -80,7 +92,7 @@ Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/d
 
 ## Dependencies
 
-[jQuery 1.7+](http://jquery.com/), *[Flashcanvas](http://flashcanvas.net/) for older browser support*
+[jQuery 1.7+](http://jquery.com/), [Modernizr](http://www.modernizr.com/) <span class="label success">New</span>, *[Flashcanvas](http://flashcanvas.net/) for older browser support*
 
 
 ## Contributing
@@ -110,19 +122,25 @@ You can also clone the project with [Git](http://git-scm.com) by running:
 </section>
 
 <script>
-Modernizr.load({
-    load: "/lockdown/lockdown/build/js/lockdown-@VERSION@-min.js",
-    complete: function () {
-        $(function () {
-
-            var options = {
-                width: 580,
-                filterexp: new RegExp("-- do not copy --")
-            };
-            Lockdown.configure( options );
-            Lockdown.lock( $("pre.code") );
-
-        });
+Modernizr.load([
+    "/lockdown/lockdown/build/js/lockdown-@VERSION@-min.js",
+    {
+        test: Modernizr.canvas,
+        nope: "/lockdown/lockdown/build/js/flashcanvas/flashcanvas.js",
+        complete: function () {
+            $(function () {
+    
+                var $elements = $("pre.code");
+                var options = {
+                    jsdir: "lockdown/build/js",
+                    width: 580,
+                    filterexp: new RegExp("-- do not copy --")
+                };
+                Lockdown.init( options );
+                Lockdown.lock( $elements );
+    
+            });
+        }
     }
-});
+]);
 </script>

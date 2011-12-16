@@ -3,7 +3,7 @@ layout: default
 title: Lockdown - hide your code!
 ---
 
-<link rel="stylesheet" href="http://draeton.github.com/lockdown/lockdown/build/css/lockdown-0.0.29-min.css">
+<link rel="stylesheet" href="http://draeton.github.com/lockdown/lockdown/build/css/lockdown-0.0.30-min.css">
 
 <section id="main" role="main">
 
@@ -54,25 +54,37 @@ var%20t%20%3D%20%24(%22%3Ctextarea%3E%22).prependTo(%22body%22)%3B%0Avar%20b%20%
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
 {% highlight html %}
-<link rel="stylesheet" href="css/lockdown-0.0.29-min.css">
+<link rel="stylesheet" href="css/lockdown-0.0.30-min.css">
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-<script src="js/lockdown-0.0.29-min.js"></script>
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/modernizr-2.0.6.min.js"></script>
+<script src="js/lockdown-0.0.30-min.js"></script>
 {% endhighlight %}
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
 {% highlight js %}
-$(document).ready(function () {
-
-    var options = {
-        width: 580,
-        filterexp: new RegExp("-- do not copy --")
-    };
-    Lockdown.configure( options );
-    Lockdown.lock( $("pre.code") );
-
-});
+Modernizr.load([
+    "js/lockdown-0.0.30-min.js",
+    {
+        test: Modernizr.canvas,
+        nope: "js/flashcanvas/flashcanvas.js",
+        complete: function () {
+            $(function () {
+    
+                var $elements = $("pre.code");
+                var options = {
+                    jsdir: "lockdown/build/js",
+                    width: 580,
+                    filterexp: new RegExp("-- do not copy --")
+                };
+                Lockdown.init( options );
+                Lockdown.lock( $elements );
+    
+            });
+        }
+    }
+]);
 {% endhighlight %}
 
 Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html)
@@ -80,7 +92,7 @@ Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/d
 
 ## Dependencies
 
-[jQuery 1.7+](http://jquery.com/), *[Flashcanvas](http://flashcanvas.net/) for older browser support*
+[jQuery 1.7+](http://jquery.com/), [Modernizr](http://www.modernizr.com/) <span class="label success">New</span>, *[Flashcanvas](http://flashcanvas.net/) for older browser support*
 
 
 ## Contributing
@@ -98,7 +110,7 @@ Documentation is available [here.](http://draeton.github.com/lockdown/lockdown/d
 
 ## Download
 
-The latest release, **0.0.29, is [available here](http://draeton.github.com/lockdown/lockdown/dist/lockdown-0.0.29.zip).**
+The latest release, **0.0.30, is [available here](http://draeton.github.com/lockdown/lockdown/dist/lockdown-0.0.30.zip).**
 
 You can download this project in either [zip](https://github.com/draeton/lockdown/zipball/master) 
 or [tar](https://github.com/draeton/lockdown/tarball/master) formats.
@@ -110,19 +122,25 @@ You can also clone the project with [Git](http://git-scm.com) by running:
 </section>
 
 <script>
-Modernizr.load({
-    load: "/lockdown/lockdown/build/js/lockdown-0.0.29-min.js",
-    complete: function () {
-        $(function () {
-
-            var options = {
-                width: 580,
-                filterexp: new RegExp("-- do not copy --")
-            };
-            Lockdown.configure( options );
-            Lockdown.lock( $("pre.code") );
-
-        });
+Modernizr.load([
+    "/lockdown/lockdown/build/js/lockdown-0.0.30-min.js",
+    {
+        test: Modernizr.canvas,
+        nope: "/lockdown/lockdown/build/js/flashcanvas/flashcanvas.js",
+        complete: function () {
+            $(function () {
+    
+                var $elements = $("pre.code");
+                var options = {
+                    jsdir: "lockdown/build/js",
+                    width: 580,
+                    filterexp: new RegExp("-- do not copy --")
+                };
+                Lockdown.init( options );
+                Lockdown.lock( $elements );
+    
+            });
+        }
     }
-});
+]);
 </script>
