@@ -198,7 +198,7 @@
             var s = this.settings;
 
             /* Get the code array from the text */
-            var code = this._getCode(element.innerText, element.className);
+            var code = this._getCode($(element).text(), element.className);
 
             /* determine the indent of the line numbers */
             s.indent = defaults.indent * (code.length + "").length;
