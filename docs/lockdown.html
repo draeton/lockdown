@@ -45,17 +45,17 @@ Licensed under the MIT license.</p>             </td>             <td class="cod
 </code></pre>             </td>             <td class="code">               <div class="highlight"><pre>
     <span class="kd">function</span> <span class="nx">Lockdown</span> <span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">var</span> <span class="nx">lockdown</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">Lockdown</span> <span class="o">||</span> <span class="k">this</span><span class="p">;</span>
-        <span class="nx">lockdown</span><span class="p">.</span><span class="nx">configure</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+        <span class="nx">lockdown</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
         <span class="k">return</span> <span class="nx">lockdown</span><span class="p">;</span>
     <span class="p">}</span>
 
 </pre></div>             </td>           </tr>                               <tr id="section-4">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-4">&#182;</a>               </div>               <h2>Lockdown prototype</h2>             </td>             <td class="code">               <div class="highlight"><pre>
     <span class="nx">Lockdown</span><span class="p">.</span><span class="nx">prototype</span> <span class="o">=</span> <span class="p">{</span>
-</pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <h3>configure</h3>
+</pre></div>             </td>           </tr>                               <tr id="section-5">             <td class="docs">               <div class="pilwrap">                 <a class="pilcrow" href="#section-5">&#182;</a>               </div>               <h3>init</h3>
 
 <p>Update the settings object, perhaps when styling
 a new section of code blocks</p>             </td>             <td class="code">               <div class="highlight"><pre>
-        <span class="nx">configure</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
             <span class="k">this</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">({},</span> <span class="nx">defaults</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
         <span class="p">},</span>
         

@@ -1,29 +1,45 @@
 ## Lockdown
 
 [Lockdown](http://draeton.github.com/lockdown/) obfuscates code snippets by writing them to the canvas.
-The current version is `0.0.29`. Documentation is available
+The current version is `0.0.30`. Documentation is available
 [here](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html).
 
 ## Implementation
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="css/lockdown-0.0.29-min.css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
-    <script src="js/lockdown-0.0.29-min.js"></script>
+    <link rel="stylesheet" href="css/lockdown-0.0.30-min.css">
+    <script src="js/jquery-1.7.1.min.js"></script>
+    <script src="js/modernizr-2.0.6.min.js"></script>
+    <script src="js/lockdown-0.0.30-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
-    jQuery(document).ready(function ($) {
-
-        Lockdown.configure( {filterexp: new RegExp("-- do not copy --")} );
-        Lockdown.lock( $("pre.code") );
-
-    });
+    Modernizr.load([
+        "js/lockdown-0.0.30-min.js",
+        {
+            test: Modernizr.canvas,
+            nope: "js/flashcanvas/flashcanvas.js",
+            complete: function () {
+                $(function () {
+        
+                    var $elements = $("pre.code");
+                    var options = {
+                        jsdir: "lockdown/build/js",
+                        width: 580,
+                        filterexp: new RegExp("-- do not copy --")
+                    };
+                    Lockdown.init( options );
+                    Lockdown.lock( $elements );
+        
+                });
+            }
+        }
+    ]);
 
 ## Dependencies
 
-jQuery 1.7+, *Flashcanvas for older browser support*
+jQuery 1.7+, Modernizr; *Flashcanvas for older browser support*
 
 ## License
 
