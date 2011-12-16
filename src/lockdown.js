@@ -46,17 +46,17 @@
     //     @param {Object} options Optional configuration hash
     function Lockdown (options) {
         var lockdown = window.Lockdown || this;
-        lockdown.configure(options);
+        lockdown.init(options);
         return lockdown;
     }
 
     // ## Lockdown prototype
     Lockdown.prototype = {
-        // ### configure
+        // ### init
         // 
         // Update the settings object, perhaps when styling
         // a new section of code blocks
-        configure: function (options) {
+        init: function (options) {
             this.settings = $.extend({}, defaults, options);
         },
         
