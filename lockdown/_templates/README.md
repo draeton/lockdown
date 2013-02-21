@@ -22,7 +22,7 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
             nope: "js/flashcanvas/flashcanvas.js",
             complete: function () {
                 $(function () {
-        
+
                     var $elements = $("pre.code");
                     var options = {
                         jsdir: "lockdown/build/js",
@@ -31,7 +31,7 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
                     };
                     Lockdown.init( options );
                     Lockdown.lock( $elements );
-        
+
                 });
             }
         }
@@ -45,7 +45,7 @@ jQuery 1.7+, Modernizr; *Flashcanvas for older browser support*
 
 (The MIT License)
 
-Copyright (c) 2011, <[Matthew Cobbs](mailto:draeton@gmail.com)>
+Copyright (c) 2013, <[Matthew Cobbs](mailto:draeton@gmail.com)>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

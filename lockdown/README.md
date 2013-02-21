@@ -1,28 +1,28 @@
 ## Lockdown
 
 [Lockdown](http://draeton.github.com/lockdown/) obfuscates code snippets by writing them to the canvas.
-The current version is `0.0.32`. Documentation is available
+The current version is `0.0.33`. Documentation is available
 [here](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html).
 
 ## Implementation
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="css/lockdown-0.0.32-min.css">
+    <link rel="stylesheet" href="css/lockdown-0.0.33-min.css">
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/modernizr-2.0.6.min.js"></script>
-    <script src="js/lockdown-0.0.32-min.js"></script>
+    <script src="js/lockdown-0.0.33-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
     Modernizr.load([
-        "js/lockdown-0.0.32-min.js",
+        "js/lockdown-0.0.33-min.js",
         {
             test: Modernizr.canvas,
             nope: "js/flashcanvas/flashcanvas.js",
             complete: function () {
                 $(function () {
-        
+
                     var $elements = $("pre.code");
                     var options = {
                         jsdir: "lockdown/build/js",
@@ -31,7 +31,7 @@ Once that's in place, you may replace code blocks using the `Lockdown.lock` meth
                     };
                     Lockdown.init( options );
                     Lockdown.lock( $elements );
-        
+
                 });
             }
         }
@@ -45,7 +45,7 @@ jQuery 1.7+, Modernizr; *Flashcanvas for older browser support*
 
 (The MIT License)
 
-Copyright (c) 2011, <[Matthew Cobbs](mailto:draeton@gmail.com)>
+Copyright (c) 2013, <[Matthew Cobbs](mailto:draeton@gmail.com)>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
