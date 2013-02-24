@@ -1,4 +1,4 @@
-[![build status](https://raw.github.com/draeton/lockdown/master/status.png)](http://draeton.github.com/lockdown/)
+[![build status](https://raw.github.com/draeton/lockdown/master/out/status.png)](http://draeton.github.com/lockdown/)
 
 [Lockdown](http://draeton.github.com/lockdown/)
 ==========
