@@ -2,44 +2,46 @@
 <project name="Lockdown" basedir="." default="prod">
 
     <description>ANT build file for git://github.com/draeton/lockdown</description>
-    
-        
+
+
     <property environment="env"/>
     <property name="repo" value="lockdown"/>
-    
+
     <import file="../_tools/github/common-targets.xml"/>
-    
-    
+
+
     <target name="-init" depends="-load.properties" description="Starting new build">
         <echo>Starting new build</echo>
-        
+
         <filelist id="src.js" dir="${src.dir}">
             <file name="${repo}.js"/>
         </filelist>
-        
+
         <filelist id="src.css" dir="${src.dir}">
             <file name="${repo}.css"/>
         </filelist>
     </target>
-    
-    
+
+
     <target name="-copy-depends" depends="-init" description="Copying dependencies">
         <echo>Copying dependencies</echo>
-        
+
         <copy todir="${build.dir}/js">
             <fileset dir="${src.dir}/lib"/>
         </copy>
     </target>
-    
-    
+
+
     <!-- * build * -->
     <target name="prod"
         description="Builds project files for production use"
         depends="
-            increment,
-            -load.properties,
-            -clean,
             -init,
+            -load.properties,
+            jshint,
+            -commit.message,
+            -clean,
+            -increment,
             -readme,
             -docco,
             -concat,
@@ -48,7 +50,7 @@
             -zip,
             -commit">
     </target>
-                
+
     <target name="pages"
         description="Builds project pages (and prod)"
         depends="
@@ -56,5 +58,5 @@
             -gh-pages-update,
             -gh-pages-commit">
     </target>
-    
+
 </project>
