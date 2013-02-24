@@ -1,6 +1,9 @@
-## Lockdown
+[![build status](https://raw.github.com/draeton/lockdown/master/status.png)](http://draeton.github.com/lockdown/)
 
-[Lockdown](http://draeton.github.com/lockdown/) obfuscates code snippets by writing them to the canvas.
+[Lockdown](http://draeton.github.com/lockdown/)
+==========
+
+Lockdown obfuscates code snippets by writing them to the canvas.
 The current version is `@VERSION@`. Documentation is available
 [here](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html).
 

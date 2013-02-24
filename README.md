@@ -1,22 +1,25 @@
-## Lockdown
+[![build status](https://raw.github.com/draeton/lockdown/master/status.png)](http://draeton.github.com/lockdown/)
 
-[Lockdown](http://draeton.github.com/lockdown/) obfuscates code snippets by writing them to the canvas.
-The current version is `0.0.38`. Documentation is available
+[Lockdown](http://draeton.github.com/lockdown/)
+==========
+
+Lockdown obfuscates code snippets by writing them to the canvas.
+The current version is `0.0.39`. Documentation is available
 [here](http://draeton.github.com/lockdown/lockdown/docs/lockdown.html).
 
 ## Implementation
 
 Place jQuery, the Lockdown script and the Lockdown stylesheet on the page:
 
-    <link rel="stylesheet" href="css/lockdown-0.0.38-min.css">
+    <link rel="stylesheet" href="css/lockdown-0.0.39-min.css">
     <script src="js/jquery-1.7.1.min.js"></script>
     <script src="js/modernizr-2.0.6.min.js"></script>
-    <script src="js/lockdown-0.0.38-min.js"></script>
+    <script src="js/lockdown-0.0.39-min.js"></script>
 
 Once that's in place, you may replace code blocks using the `Lockdown.lock` method:
 
     Modernizr.load([
-        "js/lockdown-0.0.38-min.js",
+        "js/lockdown-0.0.39-min.js",
         {
             test: Modernizr.canvas,
             nope: "js/flashcanvas/flashcanvas.js",

@@ -1,0 +1,13 @@
+JS Test Results
+===============================================================================
+
+Running file:///c:/home/github/lockdown/tests/index.html...
+1. main: Dependencies (3, 1, 4)
+    1. Pass: jQuery exists.
+    2. Pass: Modernizr exists.
+    3. Pass: Lockdown exists.
+    4. Fail: Expected 1 assertions, but 3 were run
+    Expected [undefined] but was [undefined].
+Test failed.
+===============================================================================
+JS tests failed. 1 test failed. 0 error.
