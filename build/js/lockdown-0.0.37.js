@@ -37,7 +37,7 @@
 
         /* lines to remove from code before drawing */
         filterexp  : null
-    }
+    };
 
     // ## Lockdown constructor
     //
