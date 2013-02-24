@@ -8,7 +8,7 @@
     });
 
 
-    test("Dependencies", 1, function () {
+    test("Dependencies", 3, function () {
         ok(jQuery, "jQuery exists.");
         ok(Modernizr, "Modernizr exists.");
         ok(Lockdown, "Lockdown exists.");
